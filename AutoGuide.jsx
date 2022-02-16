@@ -1,6 +1,8 @@
 ﻿/*
     AutoGuide_v2
     Developed by Cube
+
+    cubezeero@gmail.com
 */
 
 
@@ -14,12 +16,11 @@ function buildUI(thisObj){
     }
 
     var i;
-    var guide = 0;
     var filepath = new File(new File($.fileName).parent);
 	  var iconpath = filepath.fullName + "/AutoGuide_icons";
 
     var dn = wnd.add("edittext", [5, 5, 120, 25], "");
-    dn.helpTip = "split number";
+    dn.helpTip = "Split number";
 
     var st_drpdwn = wnd.add("dropdownlist", [5, 30, 120, 50],  ["Vertical", "Horizontal", "ALL"]);
     st_drpdwn.helpTip = "Select guide type";
@@ -35,87 +36,71 @@ function buildUI(thisObj){
     RemoveBtn.helpTip = "Remove Guide";
 
 
-  //ガイド削除
   RemoveBtn.onClick = function(){
 
-    var activeComp = app.project.activeItem;
+    var activeItem = app.project.activeItem;
+    var guidenum = activeItem.guides.length;
 
-    if(activeComp && (activeComp instanceof CompItem)){
-      for (i = 0 ; i<= guide ; i++){
-        activeComp.removeGuide(0);
+    if(activeItem){
+      for (i = 0 ; i <= Number(guidenum) ; i++){
+        activeItem.removeGuide(0);
       }
-        guide = 0
     }else{
-      alert("The active composition is not selected.");
+      alert("The active item is not selected.");
     }
   }
 
-
-  //中心のガイドを作成
   CreateCenterBtn.onClick = function(){
 
-     var activeComp = app.project.activeItem;
+     var activeItem = app.project.activeItem;
 
-     if(activeComp&&(activeComp instanceof CompItem)){
-          activeComp.addGuide(0, activeComp.height/2);
-          activeComp.addGuide(1, activeComp.width/2);
-          guide = guide+2
+     if(activeItem){
+          activeItem.addGuide(0, activeItem.height/2);
+          activeItem.addGuide(1, activeItem.width/2);
      }else{
-         alert("The active composition is not selected.");
+         alert("The active item is not selected.");
      }
   }
 
-
-  //指定された分割数に応じたガイド作成
   CreateBtn.onClick = function(){
 
-    var activeComp = app.project.activeItem;
+    var activeItem = app.project.activeItem;
 
-    if(activeComp&&(activeComp instanceof CompItem)){
+    if(activeItem){
 
-      //縦
       if(st_drpdwn.selection.text=="Vertical"){
-          var DNheight = activeComp.height/Number(dn.text)
+          var DNheight = activeItem.height/Number(dn.text)
 
           for (i = 1; i <= Number(dn.text)-1; i++){
-              activeComp.addGuide(0, DNheight*i);
+              activeItem.addGuide(0, DNheight*i);
           }
-
-          guide = guide+(Number(dn.text)-1);
       }
 
-      //横
       if(st_drpdwn.selection.text=="Horizontal"){
 
-          var DNwidth = activeComp.width/Number(dn.text);
+          var DNwidth = activeItem.width/Number(dn.text);
 
           for (i = 1; i <= Number(dn.text)-1; i++){
-              activeComp.addGuide(1, DNwidth*i);
+              activeItem.addGuide(1, DNwidth*i);
           }
-
-          guide = guide+(Number(dn.text)-1);
         }
 
-
-      //縦横両方
       if(st_drpdwn.selection.text=="ALL"){
-          var DNheight = activeComp.height/Number(dn.text);
+          var DNheight = activeItem.height/Number(dn.text);
 
           for (i = 1; i <= Number(dn.text)-1; i++){
-              activeComp.addGuide(0, DNheight*i);
+              activeItem.addGuide(0, DNheight*i);
           }
 
-          var DNwidth = activeComp.width/Number(dn.text);
+          var DNwidth = activeItem.width/Number(dn.text);
 
           for (i = 1; i <= Number(dn.text)-1; i++){
-              activeComp.addGuide(1, DNwidth*i);
+              activeItem.addGuide(1, DNwidth*i);
           }
-
-          guide = guide+((Number(dn.text)*2)-2);
         }
 
       }else{
-        alert("The active composition is not selected.");
+        alert("The active item is not selected.");
       }
 
     }
