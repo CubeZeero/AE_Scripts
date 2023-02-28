@@ -10,6 +10,10 @@ You can also create by specifying the number of divisions.
 
 https://cubezeero.gumroad.com/l/ae-autoguide
 
+## Serial-Renamer
+
+Rename the input string to the layer name one character at a time.
+
 ## SpotifyCtrl
 
 This is a script to control Spotify from AfterEffects.
