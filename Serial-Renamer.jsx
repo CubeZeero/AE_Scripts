@@ -33,7 +33,6 @@ function buildUI(thisObj){
         }else{
             alert("The active item is not selected.");
         }
-
     }
 
     main_wnd.onResize = function(){
