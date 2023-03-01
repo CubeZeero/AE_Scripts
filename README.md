@@ -14,6 +14,14 @@ https://cubezeero.gumroad.com/l/ae-autoguide
 
 Rename the input string to the layer name one character at a time.
 
+## Simple-Blink
+
+Property value can be blinked.
+
+Assign it to a keyboard shortcut etc...
+
+(Not in Script UI Panel)
+
 ## SpotifyCtrl
 
 This is a script to control Spotify from AfterEffects.
