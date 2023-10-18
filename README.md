@@ -32,8 +32,6 @@ Calculate the number of frames between composition markers
 
 This is a script to control Spotify from AfterEffects.
 
-It is hosted by a command line tool created in Python.
-
 It is not in this repository, but it is maintained in another repository.
 
-https://github.com/CubeZeero/AE_SpotifyCtrl
+[https://github.com/CubeZeero/AE_SpotifyCtrl](https://github.com/CubeZeero/SpotifyCtrl)
