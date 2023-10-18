@@ -43,6 +43,10 @@
                         time_difference = String(parseInt(time_difference_end) - parseInt(time_difference_start));
                         result_text += "" + activeItem.markerProperty.keyValue(i).comment.replace(/\r?\n/g, '') + " - " +activeItem.markerProperty.keyValue(i+1).comment.replace(/\r?\n/g, '') + " : " + time_difference + "\n";
                     }
+                
+                result_text += "" + activeItem.markerProperty.keyValue(marker_num).comment.replace(/\r?\n/g, '') + " - End : " +String((comp_duration*framerate) - parseInt(time_difference_end)) + "\n";
+                input_text.text = result_text.replace(/\n+$/g,'');
+                
                 }else{
                     alert("Change the timeline timecode display format to frames.");
                 }
@@ -52,8 +56,6 @@
         }else{
             alert("The active item is not selected.");
         }
-    result_text += "" + activeItem.markerProperty.keyValue(marker_num).comment.replace(/\r?\n/g, '') + " - End : " +String((comp_duration*framerate) - parseInt(time_difference_end)) + "\n";
-    input_text.text = result_text.replace(/\n+$/g,'');
     }
 
     main_wnd.onResize = function(){
