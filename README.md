@@ -22,6 +22,12 @@ Assign it to a keyboard shortcut etc...
 
 (Not in Script UI Panel)
 
+## Marker-Time-Measure
+
+Calculate the number of frames between composition markers
+
+(fps with decimal point is not supported)
+
 ## SpotifyCtrl
 
 This is a script to control Spotify from AfterEffects.
