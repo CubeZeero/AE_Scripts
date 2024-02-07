@@ -28,6 +28,14 @@ Calculate the number of frames between composition markers
 
 (fps with decimal point is not supported)
 
+## PaintEffect-Color-Changer
+
+Change the colors of paint effects at once.
+
+We have not written how to use this function because we believe the demand for it is limited.
+
+Please contact us for more details.
+
 ## SpotifyCtrl
 
 This is a script to control Spotify from AfterEffects.
