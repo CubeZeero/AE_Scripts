@@ -31,8 +31,6 @@ function buildUI(thisObj){
 
         var activeItem = app.project.activeItem;
         var activeItemLayer = activeItem.selectedLayers[0]
-        
-        alert(activeItemLayer.selectedProperties[0].name)
 
         if(activeItem){
             if(activeItemLayer.selectedProperties[0].name == "ペイント" || activeItemLayer.selectedProperties[0].name == "Paint"){
