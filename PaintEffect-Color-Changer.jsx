@@ -29,15 +29,14 @@ function buildUI(thisObj){
 
     ok_btn.onClick = function(){
 
-        var text_data = input_text.text.replace(/\r?\n/g, '')
         var activeItem = app.project.activeItem;
         var activeItemLayer = activeItem.selectedLayers[0]
         
-        if (check_is.value == true) text_data = text_data.replace(/\s+/g, "");
+        alert(activeItemLayer.selectedProperties[0].name)
 
         if(activeItem){
             if(activeItemLayer.selectedProperties[0].name == "ペイント" || activeItemLayer.selectedProperties[0].name == "Paint"){
-                for (var i = 1; i <= Number(activeItemLayer.selectedProperties.length)-1; i++) activeItemLayer.selectedProperties[i].strokeOption.color.setValue(hexToRGB(input_text.text));
+                for (var i = 1; i <= Number(activeItemLayer.selectedProperties.length-1); i++) activeItemLayer.selectedProperties[i].strokeOption.color.setValue(hexToRGB(input_text.text));
             }else{
                 alert("Paint effect not selected.");
             }
