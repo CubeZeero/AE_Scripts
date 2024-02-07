@@ -34,7 +34,7 @@ Change the colors of paint effects at once.
 
 We have not written how to use this function because we believe the demand for it is limited.
 
-Please contact us for more details.
+Please contact me if you need anything.
 
 ## SpotifyCtrl
 
