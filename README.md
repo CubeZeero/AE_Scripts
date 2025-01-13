@@ -36,6 +36,10 @@ We have not written how to use this function because we believe the demand for i
 
 Please contact me if you need anything.
 
+## Auto-Proxy-Selector
+
+Set the video file with the same name as the selected composition as a proxy.
+
 ## SpotifyCtrl
 
 This is a script to control Spotify from AfterEffects.
